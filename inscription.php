@@ -14,27 +14,27 @@ include('./partials/header.php');
         <form action="admin/admininscription.php" method="POST">
             <div class="mr-4 ml-4 mt-8">
                 <label class="block text-gray-600 font-light text-sm mb-1" for="nom">Nom</label>
-                <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="text" id="nom" name="nom">
+                <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="text" id="nom" name="nom" placeholder="Nom">
             </div>
 
             <div class="mr-4 ml-4 mt-6">
                 <label class="block text-gray-600 font-light text-sm mb-1" for="prenom">Prénom</label>
-                <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="text" id="prenom" name="prenom">
+                <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="text" id="prenom" name="prenom" placeholder="Prénom">
             </div>
 
             <div class="mr-4 ml-4 mt-6">
                 <label class="block text-gray-600 font-light text-sm mb-1" for="nom_utilisateur">Nom d'utilisateur</label>
-                <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="text" id="nom_utilisateur" name="nom_utilisateur">
+                <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="text" id="nom_utilisateur" name="nom_utilisateur" placeholder="Nom d'utilisateur">
             </div>
 
             <div class="mr-4 ml-4 mt-6">
                 <label class="block text-gray-600 font-light text-sm mb-1" for="password">Mot de passe</label>
-                <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="password" id="mdp" name="mdp">
+                <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="password" id="mdp" name="mdp" placeholder="Mot de passe">
             </div>
 
             <div class="mr-4 ml-4 mt-6">
                 <label class="block text-gray-600 font-light text-sm mb-1" for="confirm_mdp">Confirmation mot de passe</label>
-                <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="password" id="confirm_mdp" name="confirm_mdp">
+                <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="password" id="confirm_mdp" name="confirm_mdp" placeholder="Confirmation mot de passe">
             </div>
 
             <div class="mr-4 ml-4 mt-6 mb-4">

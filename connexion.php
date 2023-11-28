@@ -32,7 +32,7 @@ include('./partials/header.php');
         </div>
 
         <div class="mt-4 text-center">
-            <a href="pinscription.php" class="text-gray-400 underline font-light">Créer un compte</a>
+            <a href="inscription.php" class="text-gray-400 underline font-light">Créer un compte</a>
         </div>
 
         <div class="mt-4  text-center">
