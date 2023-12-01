@@ -40,7 +40,7 @@ include('./partials/header.php');
         </div>
 
         <div class="mt-4  text-center">
-            <a href="" class="text-gray-400 underline font-light">Mot de passe oublié ?</a>
+            <a href="mdp.php" class="text-gray-400 underline font-light">Mot de passe oublié ?</a>
         </div>
 
     </div>
