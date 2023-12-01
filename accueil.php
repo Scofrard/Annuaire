@@ -7,7 +7,7 @@ include('./partials/header.php');
 
 <div class="bg-white mt-12 mb-12 pt-10 pb-10 pl-5 pr-5 rounded-xl shadow-2xl sm:mx-auto sm:w-full  md:max-w-xl xl:max-w-2xl">
 
-    <div class="flex justify-between items-center p-5">
+    <div class="flex justify-between items-center ml-5">
         <img style="width:110px; margin-bottom:20px;" src="./assets/logoannuaire.png">
         <button type="submit" value="bconnexion" class="bg-gradient-to-b from-[#533daf] from-30% to-[#2A1F58] to-90% text-white text-lg font-bold px-8 py-2 rounded-xl hover:bg-orange-600">Déconnexion</button>
     </div>
