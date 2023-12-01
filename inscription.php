@@ -1,6 +1,6 @@
 <?php
 
-$title = "Page d'inscription";
+$title = "Inscription";
 include('./partials/header.php');
 
 ?>

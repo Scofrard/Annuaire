@@ -1,6 +1,6 @@
 <?php
 
-$title = "Page de connexion";
+$title = "Connexion";
 include('./partials/header.php');
 
 ?>
