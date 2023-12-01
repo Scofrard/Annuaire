@@ -18,12 +18,12 @@ include('./partials/header.php');
         <form action="admin/adminconnexion.php" method="POST">
             <div class="mr-4 ml-4 mt-8">
                 <label class="block text-gray-600 font-light text-sm mb-1" for="user">Nom d'utilisateur</label>
-                <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="text" id="nom_utilisateur" name="nom_utilisateur">
+                <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="text" id="nom_utilisateur" name="nom_utilisateur" placeholder="Nom d'utilisateur">
             </div>
 
             <div class="mr-4 ml-4 mt-6">
                 <label class="block text-gray-600 font-light text-sm mb-1" for="username">Mot de passe</label>
-                <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="password" id="mdp" name="mdp">
+                <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="password" id="mdp" name="mdp" placeholder="Mot de passe">
             </div>
 
             <div class="m-4 mt-10 text-center">
