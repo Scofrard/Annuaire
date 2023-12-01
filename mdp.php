@@ -17,7 +17,7 @@ include('./partials/header.php');
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-lg xl:max-w-2xl">
 
 
-        <form action="admin/admininscription.php" method="POST">
+        <form action="admin/admin_mdp.php" method="POST">
 
             <div class="ml-4 mr-4 mt-6 mb-6">
                 <label class="block text-gray-600 font-light text-sm mb-1" for="nom_utilisateur">Nom d'utilisateur</label>
@@ -54,7 +54,7 @@ include('./partials/header.php');
 
 
             <div class="m-4 mt-10 text-center">
-                <button type="submit" value="bConnexion" class="bg-gradient-to-b from-[#533daf] from-30% to-[#2A1F58] to-90% text-white text-lg font-bold px-8 py-2 rounded-xl hover:bg-orange-600">S'inscrire</button>
+                <button type="submit" value="bConfirmer" class="bg-gradient-to-b from-[#533daf] from-30% to-[#2A1F58] to-90% text-white text-lg font-bold px-8 py-2 rounded-xl hover:bg-orange-600">Confirmer</button>
             </div>
 
         </form>

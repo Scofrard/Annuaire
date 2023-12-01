@@ -15,7 +15,7 @@ include('./partials/header.php');
 
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
 
-        <form action="admin/adminconnexion.php" method="POST">
+        <form action="admin/admin_connexion.php" method="POST">
             <div class="mr-4 ml-4 mt-8">
                 <label class="block text-gray-600 font-light text-sm mb-1" for="user">Nom d'utilisateur</label>
                 <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="text" id="nom_utilisateur" name="nom_utilisateur" placeholder="Nom d'utilisateur">

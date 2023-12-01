@@ -17,7 +17,7 @@ include('./partials/header.php');
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-lg xl:max-w-2xl">
 
 
-        <form action="admin/admininscription.php" method="POST">
+        <form action="admin/admin_inscription.php" method="POST">
 
             <div class="grid gap-2 md:grid-cols-2">
                 <div class="mr-4 ml-4">

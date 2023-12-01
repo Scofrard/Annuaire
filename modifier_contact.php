@@ -1,6 +1,6 @@
 <?php
 
-$title = "Page de création d'un contact";
+$title = "Modifier un contact";
 include('./partials/header.php');
 
 ?>
@@ -12,12 +12,12 @@ include('./partials/header.php');
         <img style="width:220px; margin-bottom:20px;" src="./assets/logoannuaire.png">
     </div>
 
-    <h1 class="text-center font-bold text-3xl">Créer un contact</h1>
+    <h1 class="text-center font-bold text-3xl">Modifier le contact</h1>
 
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-lg xl:max-w-2xl">
 
 
-        <form action="admin/admininscription.php" method="POST">
+        <form action="admin/admin_gestion_contact.php" method="POST">
 
             <div class="grid gap-2 md:grid-cols-2">
                 <div class="mr-4 ml-4">
@@ -49,7 +49,7 @@ include('./partials/header.php');
             </div>
 
             <div class="m-4 mt-10 text-center">
-                <button type="submit" value="bCreer" class="bg-gradient-to-b from-[#533daf] from-30% to-[#2A1F58] to-90% text-white text-lg font-bold px-8 py-2 rounded-xl hover:bg-orange-600">Ajouter</button>
+                <button type="submit" value="bModifier" class="bg-gradient-to-b from-[#533daf] from-30% to-[#2A1F58] to-90% text-white text-lg font-bold px-8 py-2 rounded-xl hover:bg-orange-600">Modifier</button>
             </div>
 
         </form>
