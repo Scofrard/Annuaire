@@ -9,7 +9,3 @@
 </head>
 
 <body class="bg-[url('./assets/fond.jpg')] bg-cover bg-no-repeat">
-
-    <div class="flex content-center justify-center h-full items-center">
-        <img style="width:220px;" class="mt-10" src="./assets/logoannuaire.png">
-    </div>

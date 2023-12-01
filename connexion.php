@@ -5,7 +5,11 @@ include('./partials/header.php');
 
 ?>
 
-<div class="bg-white pt-10 pb-10 pl-5 pr-5 rounded-xl shadow-2xl sm:mx-auto sm:w-full sm:max-w-sm">
+<div class="bg-white mt-12 pt-10 pb-10 pl-5 pr-5 rounded-xl shadow-2xl sm:mx-auto sm:w-full sm:max-w-sm">
+
+    <div class="flex content-center justify-center items-center">
+        <img style="width:220px; margin-bottom:20px;" src="./assets/logoannuaire.png">
+    </div>
 
     <h1 class="text-center font-bold text-3xl">Connexion</h1>
 
