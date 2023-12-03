@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $title = "Inscription";
 include('./partials/header.php');
 
@@ -15,6 +15,10 @@ include('./partials/header.php');
     <h1 class="text-center font-bold text-3xl">Inscription</h1>
 
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-lg xl:max-w-2xl">
+
+        <?php if (isset($_SESSION['error'])) : ?>
+            <p><?php echo $_SESSION['error']; ?></p>
+        <?php endif; ?>
 
 
         <form action="admin/admin_inscription.php" method="POST">
@@ -39,12 +43,12 @@ include('./partials/header.php');
             <div class="grid gap-2 md:grid-cols-2">
                 <div class="mr-4 ml-4">
                     <label class="block text-gray-600 font-light text-sm mb-1" for="password">Mot de passe</label>
-                    <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="password" id="mdp" name="mdp" placeholder="Mot de passe">
+                    <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="password" id="mdp" name="mot_de_passe" placeholder="Mot de passe">
                 </div>
 
                 <div class="mr-4 ml-4">
                     <label class="block text-gray-600 font-light text-sm mb-1" for="confirm_mdp">Confirmation mot de passe</label>
-                    <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="password" id="confirm_mdp" name="confirm_mdp" placeholder="Confirmation mot de passe">
+                    <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="password" id="confirm_mdp" name="confirm_mot_de_passe" placeholder="Confirmation mot de passe">
                 </div>
             </div>
 
@@ -66,7 +70,7 @@ include('./partials/header.php');
             </div>
 
             <div class="m-4 mt-10 text-center">
-                <button type="submit" value="bConnexion" class="bg-gradient-to-b from-[#533daf] from-30% to-[#2A1F58] to-90% text-white text-lg font-bold px-8 py-2 rounded-xl hover:bg-orange-600">S'inscrire</button>
+                <button type="submit" value="bInscription" class="bg-gradient-to-b from-[#533daf] from-30% to-[#2A1F58] to-90% text-white text-lg font-bold px-8 py-2 rounded-xl hover:bg-orange-600">S'inscrire</button>
             </div>
 
         </form>

@@ -1,0 +1,28 @@
+CREATE TABLE utilisateur (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(255) NOT NULL,
+    prenom VARCHAR(255) NOT NULL,
+    nom_utilisateur VARCHAR(255) UNIQUE NOT NULL,
+    mot_de_passe VARCHAR(255) NOT NULL
+);
+
+
+CREATE TABLE contact (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(255) NOT NULL,
+    prenom VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    telephone CHAR(10),
+    adresse VARCHAR(255),
+    utilisateur_id INT,
+    FOREIGN KEY (utilisateur_id) REFERENCES utilisateur(id)
+);
+
+
+CREATE TABLE question_secrete (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    utilisateur_id INT NOT NULL,
+    question_secrete VARCHAR(255) NOT NULL,
+    reponse VARCHAR(255) NOT NULL,
+    FOREIGN KEY (utilisateur_id) REFERENCES utilisateur(id)
+);
