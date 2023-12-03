@@ -17,7 +17,8 @@ include('./partials/header.php');
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-lg xl:max-w-2xl">
 
         <?php if (isset($_SESSION['error'])) : ?>
-            <p><?php echo $_SESSION['error']; ?></p>
+            <div class="bg-[#CF3E62] text-white text-center p-2 mb-6 rounded"><?php echo $_SESSION['error']; ?></div>
+            <?php unset($_SESSION['error']); ?>
         <?php endif; ?>
 
 
