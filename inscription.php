@@ -2,7 +2,6 @@
 session_start();
 $title = "Inscription";
 include('./partials/header.php');
-
 ?>
 
 
