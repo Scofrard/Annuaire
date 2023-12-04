@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $erreurs[] = "Tous les champs sont requis";
     }
 
-    if (estUtilisateurExistant($nom_utilisateur)) {
+    if (utilisateurExistant($nom_utilisateur)) {
         $erreurs[] = "Le nom d'utilisateur existe déjà";
     }
 

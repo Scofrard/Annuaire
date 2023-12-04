@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['mdp'];
     $erreurs = [];
 
-    $utilisateur = obtenirUtilisateurParNom($nom_utilisateur);
+    $utilisateur = rechercheUtilisateur($nom_utilisateur);
 
     if (!$utilisateur) {
         $erreurs[] = "Le nom d'utilisateur n'existe pas";

@@ -17,7 +17,7 @@ function insererUtilisateur($nom, $prenom, $nom_utilisateur, $hashed_password)
     return $stmt->execute([$nom, $prenom, $nom_utilisateur, $hashed_password]);
 }
 
-function estUtilisateurExistant($nom_utilisateur)
+function utilisateurExistant($nom_utilisateur)
 {
     global $bdd;
     $sql = "SELECT COUNT(*) FROM utilisateur WHERE nom_utilisateur = ?";
@@ -50,7 +50,7 @@ function insererQuestionSecrete($nom_utilisateur, $question_secrete, $reponse)
 
 <?php
 
-function obtenirUtilisateurParNom($nom_utilisateur)
+function rechercheUtilisateur($nom_utilisateur)
 {
     global $bdd;
     $sql = "SELECT * FROM utilisateur WHERE nom_utilisateur = ?";
