@@ -1,5 +1,13 @@
 <?php
 require 'admin_connexion_db.php';
+?>
+
+<!-- INSCRIPTION -->
+<!-- INSCRIPTION -->
+<!-- INSCRIPTION -->
+
+
+<?php
 
 function insererUtilisateur($nom, $prenom, $nom_utilisateur, $hashed_password)
 {
@@ -34,3 +42,21 @@ function insererQuestionSecrete($nom_utilisateur, $question_secrete, $reponse)
         return false;
     }
 }
+?>
+
+<!-- CONNEXION -->
+<!-- CONNEXION -->
+<!-- CONNEXION -->
+
+<?php
+
+function obtenirUtilisateurParNom($nom_utilisateur)
+{
+    global $bdd;
+    $sql = "SELECT * FROM utilisateur WHERE nom_utilisateur = ?";
+    $stmt = $bdd->prepare($sql);
+    $stmt->execute([$nom_utilisateur]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+?>

@@ -5,6 +5,14 @@ include('./partials/header.php');
 
 ?>
 
+<?php if (isset($_SESSION['error'])) : ?>
+    <div class="bg-[#CF3E62] text-white text-center p-2 mb-6 rounded">
+        <?php echo $_SESSION['error']; ?>
+    </div>
+    <?php unset($_SESSION['error']); ?>
+<?php endif; ?>
+
+
 <div class="bg-white mt-12 pt-10 pb-10 pl-5 pr-5 rounded-xl shadow-2xl sm:mx-auto sm:w-full sm:max-w-sm">
 
     <div class="flex content-center justify-center items-center">
