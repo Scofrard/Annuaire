@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (!$utilisateur) {
         $erreurs[] = "Le nom d'utilisateur n'existe pas";
-    } elseif (!md5($password) === $utilisateur['mot_de_passe']) {
+    } elseif (md5($password) !== $utilisateur['mot_de_passe']) {
         $erreurs[] = "Mot de passe incorrect";
     }
 
