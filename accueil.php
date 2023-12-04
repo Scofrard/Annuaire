@@ -9,7 +9,9 @@ include('./partials/header.php');
 
     <div class="flex justify-between items-center ml-5">
         <img style="width:110px; margin-bottom:20px;" src="./assets/logoannuaire.png">
-        <button type="submit" value="bDeconnexion" class="bg-gradient-to-b from-[#533daf] from-30% to-[#2A1F58] to-90% text-white text-lg font-bold px-8 py-2 rounded-xl hover:bg-orange-600">Déconnexion</button>
+        <form action="admin/admin_deconnexion.php" method="POST">
+            <button type="submit" name="bDeconnexion" class="bg-gradient-to-b from-[#533daf] from-30% to-[#2A1F58] to-90% text-white text-lg font-bold px-8 py-2 rounded-xl hover:bg-orange-600">Déconnexion</button>
+        </form>
     </div>
 
     <h1 class="text-center font-bold text-3xl">Bonjour Prénom</h1>
