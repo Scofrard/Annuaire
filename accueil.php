@@ -5,12 +5,12 @@ include('./partials/header.php');
 
 ?>
 
-<div class="bg-white mt-12 mb-12 pt-10 pb-10 pl-5 pr-5 rounded-xl shadow-2xl sm:mx-auto sm:w-full  md:max-w-xl xl:max-w-2xl">
+<div class="bg-white mt-12 mb-12 pt-10 pb-10 pl-5 pr-5 rounded-xl shadow-2xl sm:mx-auto sm:w-full md:max-w-xl xl:max-w-2xl">
 
     <div class="flex justify-between items-center ml-5">
         <img style="width:110px; margin-bottom:20px;" src="./assets/logoannuaire.png">
         <form action="admin/admin_deconnexion.php" method="POST">
-            <button type="submit" name="bDeconnexion" class="bg-gradient-to-b from-[#533daf] from-30% to-[#2A1F58] to-90% text-white text-lg font-bold px-8 py-2 rounded-xl hover:bg-orange-600">Déconnexion</button>
+            <button type="submit" name="bDeconnexion" class="bg-gradient-to-b from-[#533daf] from-30% to-[#2A1F58] to-90% text-white font-bold px-4 py-2 rounded-xl">Déconnexion</button>
         </form>
     </div>
 
@@ -18,10 +18,10 @@ include('./partials/header.php');
 
     <div class="flex justify-between items-center mt-10 ml-5">
         <h2 class="text-center font-bold text-2xl">Contacts</h2>
-        <button type="submit" value="bConnexion" class="bg-gradient-to-b from-[#533daf] from-30% to-[#2A1F58] to-90% text-white text-lg font-bold px-8 py-2 rounded-xl hover:bg-orange-600">Ajouter</button>
+        <button type="submit" value="bAjouter" class="bg-gradient-to-b from-[#533daf] from-30% to-[#2A1F58] to-90% text-white font-bold px-8 py-2 rounded-xl">Ajouter</button>
     </div>
 
-    <div class="mt-6 sm:mx-auto sm:mx-auto sm:w-full  md:max-w-xl xl:max-w-2xl">
+    <div class="mt-6 sm:mx-auto sm:w-full  md:max-w-xl xl:max-w-2xl">
         <div class="bg-white p-5 shadow-xl rounded mb-5">
             <div class="flex justify-between mt-4">
                 <div>
