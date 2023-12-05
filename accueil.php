@@ -18,7 +18,7 @@ include('./partials/header.php');
 
     <div class="flex justify-between items-center mt-10 ml-5">
         <h2 class="text-center font-bold text-2xl">Contacts</h2>
-        <button type="submit" value="bAjouter" class="bg-gradient-to-b from-[#533daf] from-30% to-[#2A1F58] to-90% text-white font-bold px-8 py-2 rounded-xl">Ajouter</button>
+        <a href="creer_contact.php" class="bg-gradient-to-b from-[#533daf] from-30% to-[#2A1F58] to-90% text-white font-bold px-8 py-2 rounded-xl">Ajouter</a>
     </div>
 
     <div class="mt-6 sm:mx-auto sm:w-full  md:max-w-xl xl:max-w-2xl">

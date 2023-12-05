@@ -44,12 +44,12 @@ include('./partials/header.php');
             </div>
 
             <div class="mr-4 ml-4">
-                <label class="block text-gray-600 font-light text-sm mb-1" for="confirm_mdp">Adresse</label>
+                <label class="block text-gray-600 font-light text-sm mb-1" for="adresse">Adresse</label>
                 <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="text" id="adresse" name="adresse" placeholder="Adresse">
             </div>
 
             <div class="m-4 mt-10 text-center">
-                <button type="submit" value="bCreer" class="bg-gradient-to-b from-[#533daf] from-30% to-[#2A1F58] to-90% text-white text-lg font-bold px-8 py-2 rounded-xl hover:bg-orange-600">Ajouter</button>
+                <button type="submit" value="bCreer" class="bg-gradient-to-b from-[#533daf] from-30% to-[#2A1F58] to-90% text-white font-bold px-8 py-2 rounded-xl">Ajouter</button>
             </div>
 
         </form>
