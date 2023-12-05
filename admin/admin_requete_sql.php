@@ -90,4 +90,16 @@ function creerContact($userId, $nom, $prenom, $email, $telephone, $adresse)
     }
     return $message;
 }
+
+
+function recupererContactsUtilisateur($userId)
+{
+    global $bdd;
+    $sql = "SELECT * FROM contact WHERE utilisateur_id = :utilisateur_id";
+    $stmt = $bdd->prepare($sql);
+    $stmt->bindParam(':utilisateur_id', $userId, PDO::PARAM_INT);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
 ?>
