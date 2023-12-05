@@ -49,7 +49,6 @@ function insererQuestionSecrete($nom_utilisateur, $question_secrete, $reponse)
 <!-- CONNEXION -->
 
 <?php
-
 function rechercheUtilisateur($nom_utilisateur)
 {
     global $bdd;
@@ -58,7 +57,6 @@ function rechercheUtilisateur($nom_utilisateur)
     $stmt->execute([$nom_utilisateur]);
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
-
 ?>
 
 
@@ -68,15 +66,12 @@ function rechercheUtilisateur($nom_utilisateur)
 
 
 <?php
-
 function creerContact($userId, $nom, $prenom, $email, $telephone, $adresse)
 {
     global $bdd;
-    $sql = "INSERT INTO contact (utilisateur_id, nom, prenom, email, telephone, adresse) VALUES (:utilisateur_id, :nom, :prenom, :email, :telephone, :adresse)";
+    $sql = "INSERT INTO contact ( nom, prenom, email, telephone, adresse, utilisateur_id) VALUES ( :nom, :prenom, :email, :telephone, :adresse, :utilisateur_id)";
     $stmtUser = $bdd->prepare($sql);
 
-    var_dump($userId);
-    exit;
     // Associer chaque marqueur nommé à une variable spécifique
     $stmtUser->bindParam(':utilisateur_id', $userId, PDO::PARAM_INT);
     $stmtUser->bindParam(':nom', $nom, PDO::PARAM_STR);
@@ -95,5 +90,4 @@ function creerContact($userId, $nom, $prenom, $email, $telephone, $adresse)
     }
     return $message;
 }
-
 ?>

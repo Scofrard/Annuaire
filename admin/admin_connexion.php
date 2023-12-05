@@ -8,6 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $erreurs = [];
 
     $utilisateur = rechercheUtilisateur($nom_utilisateur);
+    $_SESSION["id_utilisateur"] = $utilisateur["id"];
 
     if (!$utilisateur) {
         $erreurs[] = "Le nom d'utilisateur n'existe pas";

@@ -19,9 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['bCreer'])) {
     $email = $_POST['email'];
     $telephone = $_POST['telephone'];
     $adresse = $_POST['adresse'];
-    $userId = $_SESSION;
-    var_dump($userId);
-    exit;
+    $userId = $_SESSION["id_utilisateur"];
+
     // Appeler la fonction creerContact pour insérer le nouveau contact
     $message = creerContact($userId, $nom, $prenom, $email, $telephone, $adresse);
 
