@@ -29,7 +29,7 @@ include('./partials/header.php');
                     <form action="admin/admin_connexion.php" method="POST">
                         <div class="mb-4">
                             <label class="block text-gray-600 text-sm mb-2" for="nom_utilisateur">Nom d'utilisateur</label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" id="nom_utilisateur" name="nom_utilisateur" placeholder="Nom d'utilisateur">
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" id="nom_utilisateur" name="nom_utilisateur" autofocus placeholder="Nom d'utilisateur">
                         </div>
 
                         <div class="mb-6">
