@@ -60,3 +60,40 @@ function rechercheUtilisateur($nom_utilisateur)
 }
 
 ?>
+
+
+<!-- CREER UN CONTACT -->
+<!-- CREER UN CONTACT  -->
+<!-- CREER UN CONTACT  -->
+
+
+<?php
+
+function creerContact($userId, $nom, $prenom, $email, $telephone, $adresse)
+{
+    global $bdd;
+    $sql = "INSERT INTO contact (utilisateur_id, nom, prenom, email, telephone, adresse) VALUES (:utilisateur_id, :nom, :prenom, :email, :telephone, :adresse)";
+    $stmtUser = $bdd->prepare($sql);
+
+    var_dump($userId);
+    exit;
+    // Associer chaque marqueur nommé à une variable spécifique
+    $stmtUser->bindParam(':utilisateur_id', $userId, PDO::PARAM_INT);
+    $stmtUser->bindParam(':nom', $nom, PDO::PARAM_STR);
+    $stmtUser->bindParam(':prenom', $prenom, PDO::PARAM_STR);
+    $stmtUser->bindParam(':email', $email, PDO::PARAM_STR);
+    $stmtUser->bindParam(':telephone', $telephone, PDO::PARAM_STR);
+    $stmtUser->bindParam(':adresse', $adresse, PDO::PARAM_STR);
+
+    // On exécute la requête
+    try {
+        $stmtUser->execute();
+        $message = "Le contact a bien été créé";
+    } catch (PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
+        $message = "Une erreur s'est produite";
+    }
+    return $message;
+}
+
+?>

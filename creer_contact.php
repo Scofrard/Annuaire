@@ -17,7 +17,7 @@ include('./partials/header.php');
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-lg xl:max-w-2xl">
 
 
-        <form action="accueil.php" method="POST">
+        <form action="admin/admin_gestion_utilisateur.php" method="POST">
 
             <div class="grid gap-2 md:grid-cols-2">
                 <div class="mr-4 ml-4">
@@ -49,7 +49,7 @@ include('./partials/header.php');
             </div>
 
             <div class="m-4 mt-10 text-center">
-                <button type="submit" value="bCreer" class="bg-gradient-to-b from-[#533daf] from-30% to-[#2A1F58] to-90% text-white font-bold px-8 py-2 rounded-xl">Ajouter</button>
+                <button type="submit" name="bCreer" class="bg-gradient-to-b from-[#533daf] from-30% to-[#2A1F58] to-90% text-white font-bold px-8 py-2 rounded-xl">Créer</button>
             </div>
 
         </form>
