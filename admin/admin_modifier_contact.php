@@ -7,6 +7,13 @@ include('../partials/header.php');
 require("admin_requete_sql.php");
 session_start();
 
+//Vérifier que l'id de l'utilisateur existe, sinon renvoyé vers la page d'accueil
+if (!isset($_SESSION['id_utilisateur'])) {
+    header('Location: connexion.php');
+    exit;
+}
+
+// Vérifiez si les données du formulaire sont soumises via POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['bModifier'])) {
     $contactId = $_POST['contactId'];
     $nom = $_POST['nom'];
