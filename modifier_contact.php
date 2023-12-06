@@ -31,6 +31,16 @@ if ($contactId) {
 
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-lg xl:max-w-2xl">
 
+        <?php
+        if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) {
+            echo "<div class='bg-red-500 text-white text-center p-2 mb-6 rounded'>";
+            foreach ($_SESSION['errors'] as $erreur) {
+                echo "<p>$erreur</p>";
+            }
+            echo "</div>";
+            unset($_SESSION['errors']);
+        }
+        ?>
 
         <form action="admin/admin_modifier_contact.php" method="POST">
             <input type="hidden" name="contactId" value="<?php echo $contactId; ?>">
@@ -49,7 +59,7 @@ if ($contactId) {
             <div class="grid gap-2 md:grid-cols-2">
                 <div class=" ml-4 mr-4 mt-6">
                     <label class="block text-gray-600 font-light text-sm mb-1" for="email">E-mail</label>
-                    <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="email" id="email" name="email" value="<?php echo htmlspecialchars($contact['email']); ?>">
+                    <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="mail" id="email" name="email" value="<?php echo htmlspecialchars($contact['email']); ?>">
                 </div>
 
                 <div class="mr-4 ml-4 mt-6 mb-6">
