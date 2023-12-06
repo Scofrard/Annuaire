@@ -1,16 +1,12 @@
-<?php
+<!-- AJOUTER UN CONTACT -->
+<!-- AJOUTER UN CONTACT -->
+<!-- AJOUTER UN CONTACT -->
 
-$title = "Page de gestion des contacts";
+<?php
+$title = "Page de ajout de contacts";
 include('../partials/header.php');
 require("admin_requete_sql.php");
 session_start();
-?>
-
-<!-- AJOUTER UN CONTACT -->
-<!-- AJOUTER UN CONTACT -->
-<!-- AJOUTER UN CONTACT -->
-
-<?php
 
 // Vérifiez si les données du formulaire sont soumises via POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['bCreer'])) {
@@ -32,13 +28,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['bCreer'])) {
     exit;
 }
 ?>
-
-
-<!--MODIFIER UN CONTACT-->
-<!--MODIFIER UN CONTACT-->
-<!--MODIFIER UN CONTACT-->
-
-
-<!--SUPPRIMER UN CONTACT-->
-<!--SUPPRIMER UN CONTACT-->
-<!--SUPPRIMER UN CONTACT-->

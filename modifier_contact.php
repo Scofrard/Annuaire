@@ -1,8 +1,23 @@
 <?php
-
 $title = "Modifier un contact";
 include('./partials/header.php');
+require('admin/admin_requete_sql.php');
+session_start();
 
+$contactId = isset($_GET['id']) ? $_GET['id'] : null;
+
+// Récupérer les informations du contact
+$contact = null;
+if ($contactId) {
+    $contact = recupererInfoContact($contactId);
+    if (!$contact) {
+        echo "Contact introuvable";
+        exit;
+    }
+} else {
+    echo "Aucun contact trouvé";
+    exit;
+}
 ?>
 
 
@@ -17,39 +32,39 @@ include('./partials/header.php');
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-lg xl:max-w-2xl">
 
 
-        <form action="accueil.php" method="POST">
-
+        <form action="admin/admin_modifier_utilisateur.php" method="POST">
+            <input type="hidden" name="contactId" value="<?php echo $contactId; ?>">
             <div class="grid gap-2 md:grid-cols-2">
                 <div class="mr-4 ml-4">
                     <label class="block text-gray-600 font-light text-sm mb-1" for="nom">Nom</label>
-                    <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="text" id="nom" name="nom" placeholder="Nom">
+                    <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="text" id="nom" name="nom" value="<?php echo htmlspecialchars($contact['nom']); ?>">
                 </div>
 
                 <div class="mr-4 ml-4">
                     <label class="block text-gray-600 font-light text-sm mb-1" for="prenom">Prénom</label>
-                    <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="text" id="prenom" name="prenom" placeholder="Prénom">
+                    <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="text" id="prenom" name="prenom" value="<?php echo htmlspecialchars($contact['prenom']); ?>">
                 </div>
             </div>
 
             <div class="grid gap-2 md:grid-cols-2">
                 <div class=" ml-4 mr-4 mt-6">
                     <label class="block text-gray-600 font-light text-sm mb-1" for="email">E-mail</label>
-                    <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="email" id="email" name="email" placeholder="E-mail">
+                    <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="email" id="email" name="email" value="<?php echo htmlspecialchars($contact['email']); ?>">
                 </div>
 
                 <div class="mr-4 ml-4 mt-6 mb-6">
                     <label class="block text-gray-600 font-light text-sm mb-1" for="telephone">Téléphone</label>
-                    <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="tel" id="telephone" name="telephone" placeholder="Téléphone">
+                    <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="tel" id="telephone" name="telephone" value="<?php echo htmlspecialchars($contact['telephone']); ?>">
                 </div>
             </div>
 
             <div class="mr-4 ml-4">
                 <label class="block text-gray-600 font-light text-sm mb-1" for="confirm_mdp">Adresse</label>
-                <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="text" id="adresse" name="adresse" placeholder="Adresse">
+                <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="text" id="adresse" name="adresse" value="<?php echo htmlspecialchars($contact['adresse']); ?>">
             </div>
 
             <div class="m-4 mt-10 text-center">
-                <button type="submit" value="bModifier" class="bg-gradient-to-b from-[#533daf] from-30% to-[#2A1F58] to-90% text-white text-lg font-bold px-8 py-2 rounded-xl hover:bg-orange-600">Modifier</button>
+                <button type="submit" name="bModifier" class="bg-gradient-to-b from-[#533daf] from-30% to-[#2A1F58] to-90% text-white text-lg font-bold px-8 py-2 rounded-xl hover:bg-orange-600">Modifier</button>
             </div>
 
         </form>

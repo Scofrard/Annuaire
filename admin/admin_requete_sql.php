@@ -103,3 +103,42 @@ function recupererContactsUtilisateur($userId)
 }
 
 ?>
+
+<!-- MODIFIER UN CONTACT -->
+<!-- MODIFIER UN CONTACT  -->
+<!-- MODIFIER UN CONTACT  -->
+
+<?php
+
+function recupererInfoContact($contactId)
+{
+    global $bdd;
+    $sql = "SELECT * FROM contact WHERE id = :contactId";
+    $stmt = $bdd->prepare($sql);
+    $stmt->bindParam(':contactId', $contactId, PDO::PARAM_INT);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+function modifierContact($contactId, $nom, $prenom, $email, $telephone, $adresse)
+{
+    global $bdd;
+    $sql = "UPDATE contact SET nom = :nom, prenom = :prenom, email = :email, telephone = :telephone, adresse = :adresse WHERE id = :contactId";
+    $stmtContact = $bdd->prepare($sql);
+
+    $stmtContact->bindParam(':nom', $nom, PDO::PARAM_STR);
+    $stmtContact->bindParam(':prenom', $prenom, PDO::PARAM_STR);
+    $stmtContact->bindParam(':email', $email, PDO::PARAM_STR);
+    $stmtContact->bindParam(':telephone', $telephone, PDO::PARAM_STR);
+    $stmtContact->bindParam(':adresse', $adresse, PDO::PARAM_STR);
+    $stmtContact->bindParam(':contactId', $contactId, PDO::PARAM_INT);
+
+    try {
+        $stmtContact->execute();
+        return true; //Retourne vrai si la maj est réussie
+    } catch (PDOException $e) {
+        return $e->getMessage(); // Retourne le message d'erreur en cas d'échec
+    }
+}
+
+?>
