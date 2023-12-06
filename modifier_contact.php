@@ -32,7 +32,7 @@ if ($contactId) {
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-lg xl:max-w-2xl">
 
 
-        <form action="admin/admin_modifier_utilisateur.php" method="POST">
+        <form action="admin/admin_modifier_contact.php" method="POST">
             <input type="hidden" name="contactId" value="<?php echo $contactId; ?>">
             <div class="grid gap-2 md:grid-cols-2">
                 <div class="mr-4 ml-4">
