@@ -11,11 +11,15 @@ $contact = null;
 if ($contactId) {
     $contact = recupererInfoContact($contactId);
     if (!$contact) {
-        echo "Contact introuvable";
+        echo "<div class='bg-white mt-12 mb-12 pt-10 pb-10 pl-5 pr-5 rounded-xl shadow-2xl sm:mx-auto sm:w-full  md:max-w-xl xl:max-w-2xl'>
+        <p class='text-[#533daf] font-bold text-lg'>Contact introuvable</p>
+        </div>";
         exit;
     }
 } else {
-    echo "Aucun contact trouvé";
+    echo "<div class='bg-white mt-12 mb-12 pt-10 pb-10 pl-5 pr-5 rounded-xl shadow-2xl sm:mx-auto sm:w-full  md:max-w-xl xl:max-w-2xl'>
+    <p class='text-[#533daf] font-bold text-lg'>Aucun contact trouvé</p>
+    </div>";
     exit;
 }
 ?>
@@ -47,7 +51,7 @@ if ($contactId) {
             <div class="grid gap-2 md:grid-cols-2">
                 <div class="mr-4 ml-4">
                     <label class="block text-gray-600 font-light text-sm mb-1" for="nom">Nom</label>
-                    <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="text" id="nom" name="nom" value="<?php echo htmlspecialchars($contact['nom']); ?>">
+                    <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="text" id="nom" name="nom" autofocus value="<?php echo htmlspecialchars($contact['nom']); ?>">
                 </div>
 
                 <div class="mr-4 ml-4">

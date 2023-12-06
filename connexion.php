@@ -29,12 +29,12 @@ include('./partials/header.php');
                     <form action="admin/admin_connexion.php" method="POST">
                         <div class="mb-4">
                             <label class="block text-gray-600 text-sm mb-2" for="nom_utilisateur">Nom d'utilisateur</label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" id="nom_utilisateur" name="nom_utilisateur" autofocus placeholder="Nom d'utilisateur">
+                            <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="text" id="nom_utilisateur" name="nom_utilisateur" autofocus placeholder="Nom d'utilisateur">
                         </div>
 
                         <div class="mb-6">
                             <label class="block text-gray-600 text-sm mb-2" for="mdp">Mot de passe</label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="password" id="mdp" name="mdp" placeholder="Mot de passe">
+                            <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="password" id="mdp" name="mdp" placeholder="Mot de passe">
                         </div>
 
                         <div class="flex justify-center mb-6">

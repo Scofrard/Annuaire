@@ -28,7 +28,7 @@ session_start();
             <div class="grid gap-2 md:grid-cols-2">
                 <div class="mr-4 ml-4">
                     <label class="block text-gray-600 font-light text-sm mb-1" for="nom">Nom</label>
-                    <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="text" id="nom" name="nom" placeholder="Nom">
+                    <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="text" id="nom" name="nom" placeholder="Nom" autofocus>
                 </div>
 
                 <div class="mr-4 ml-4">

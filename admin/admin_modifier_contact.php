@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['bModifier'])) {
         $erreurs[] = "L'adresse email n'est pas valide";
     }
 
-    // Si aucune erreur, procéder à la modification
+    // Si aucune erreur, on procède à la modification
     if (empty($erreurs)) {
         $resultat = modifierContact($contactId, $nom, $prenom, $email, $telephone, $adresse);
 

@@ -20,7 +20,11 @@ if (isset($_SESSION['id_utilisateur'])) {
     <div class="flex justify-between items-center ml-5">
         <img style="width:110px; margin-bottom:20px;" src="./assets/logoannuaire.png">
         <form action="admin/admin_deconnexion.php" method="POST">
-            <button type="submit" name="bDeconnexion" class="bg-gradient-to-b from-[#533daf] from-30% to-[#2A1F58] to-90% text-white font-bold px-4 py-2 rounded-xl">Déconnexion</button>
+            <button type="submit" name="bDeconnexion" class="bg-gradient-to-b from-[#533daf] from-30% to-[#2A1F58] to-90% text-white font-bold px-4 py-4 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512">
+                    <path fill="#ffffff" d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z" />
+                </svg>
+            </button>
         </form>
     </div>
 
@@ -34,7 +38,7 @@ if (isset($_SESSION['id_utilisateur'])) {
     <div class="mt-6 sm:mx-auto sm:w-full  md:max-w-xl xl:max-w-2xl">
 
         <?php foreach ($contacts as $contact) : ?>
-            <div class="bg-white p-5 shadow-xl rounded mb-5 border">
+            <div class="bg-white p-5 shadow-xl rounded mb-5 border border-[#533daf]">
                 <div class="flex justify-between mt-2">
                     <div>
                         <h3 class="font-bold text-lg"><?php echo htmlspecialchars($contact['nom']) . " " . htmlspecialchars($contact['prenom']) ?></h3>
@@ -54,16 +58,16 @@ if (isset($_SESSION['id_utilisateur'])) {
                     </div>
                 </div>
                 <div class="flex">
-                    <b>Téléphone :</b>
-                    <p><?php echo htmlspecialchars($contact['telephone']) ?></p>
+                    <b>Téléphone : </b>
+                    <p class="ml-1"> <?php echo htmlspecialchars($contact['telephone']) ?></p>
                 </div>
                 <div class="flex">
-                    <b>E-mail :</b>
-                    <p><?php echo htmlspecialchars($contact['email']) ?></p>
+                    <b>E-mail : </b>
+                    <p class="ml-1"> <?php echo htmlspecialchars($contact['email']) ?></p>
                 </div>
                 <div class="flex">
-                    <b>Adresse :</b>
-                    <p><?php echo htmlspecialchars($contact['adresse']) ?></p>
+                    <b>Adresse : </b>
+                    <p class="ml-1"> <?php echo htmlspecialchars($contact['adresse']) ?></p>
                 </div>
             </div>
         <?php endforeach; ?>
