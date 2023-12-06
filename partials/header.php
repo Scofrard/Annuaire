@@ -8,4 +8,4 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-[url('./assets/fond.jpg')] bg-cover bg-no-repeat">
+<body class="bg-[url('./assets/fond.jpg')] bg-cover bg-no-repeat min-h-screen">
