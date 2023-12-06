@@ -142,3 +142,23 @@ function modifierContact($contactId, $nom, $prenom, $email, $telephone, $adresse
 }
 
 ?>
+
+<!-- SUPPRIMER UN CONTACT -->
+<!-- SUPPRIMER UN CONTACT  -->
+<!-- SUPPRIMER UN CONTACT  -->
+
+<?php
+function supprimerContact($contactId)
+{
+    global $bdd;
+    $sql = "DELETE FROM contact WHERE id = :contactId";
+    $stmt = $bdd->prepare($sql);
+    $stmt->bindParam(':contactId', $contactId, PDO::PARAM_INT);
+    try {
+        $stmt->execute();
+        return true;
+    } catch (PDOException $e) {
+        return $e->getMessage();
+    }
+}
+?>
