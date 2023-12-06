@@ -83,12 +83,10 @@ function creerContact($userId, $nom, $prenom, $email, $telephone, $adresse)
     // On exécute la requête
     try {
         $stmtUser->execute();
-        $message = "Le contact a bien été créé";
+        return true; // Retourne vrai si l'insertion est réussie
     } catch (PDOException $e) {
-        echo "Erreur : " . $e->getMessage();
-        $message = "Une erreur s'est produite";
+        return $e->getMessage(); // Retourne le message d'erreur en cas d'échec
     }
-    return $message;
 }
 
 

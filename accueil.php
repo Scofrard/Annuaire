@@ -24,7 +24,7 @@ if (isset($_SESSION['id_utilisateur'])) {
         </form>
     </div>
 
-    <h1 class="text-center font-bold text-3xl">Bienvenue <?php echo htmlspecialchars($_SESSION["nom_utilisateur"]); ?> </h1>
+    <h1 class="text-center font-bold text-3xl">Bonjour <?php echo htmlspecialchars($_SESSION["nom_utilisateur"]); ?> </h1>
 
     <div class="flex justify-between items-center mt-10 ml-5">
         <h2 class="text-center font-bold text-2xl">Contacts</h2>
@@ -34,8 +34,8 @@ if (isset($_SESSION['id_utilisateur'])) {
     <div class="mt-6 sm:mx-auto sm:w-full  md:max-w-xl xl:max-w-2xl">
 
         <?php foreach ($contacts as $contact) : ?>
-            <div class="bg-white p-5 shadow-xl rounded mb-5">
-                <div class="flex justify-between mt-4">
+            <div class="bg-white p-5 shadow-xl rounded mb-5 border">
+                <div class="flex justify-between mt-2">
                     <div>
                         <h3 class="font-bold text-lg"><?php echo htmlspecialchars($contact['nom']) . " " . htmlspecialchars($contact['prenom']) ?></h3>
                     </div>
@@ -53,9 +53,18 @@ if (isset($_SESSION['id_utilisateur'])) {
                         </a>
                     </div>
                 </div>
-                <p>Téléphone : <?php echo htmlspecialchars($contact['telephone']) ?></p>
-                <p>E-mail : <?php echo htmlspecialchars($contact['email']) ?></p>
-                <p>Adresse : <?php echo htmlspecialchars($contact['adresse']) ?></p>
+                <div class="flex">
+                    <b>Téléphone :</b>
+                    <p><?php echo htmlspecialchars($contact['telephone']) ?></p>
+                </div>
+                <div class="flex">
+                    <b>E-mail :</b>
+                    <p><?php echo htmlspecialchars($contact['email']) ?></p>
+                </div>
+                <div class="flex">
+                    <b>Adresse :</b>
+                    <p><?php echo htmlspecialchars($contact['adresse']) ?></p>
+                </div>
             </div>
         <?php endforeach; ?>
     </div>

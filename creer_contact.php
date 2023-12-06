@@ -1,8 +1,7 @@
 <?php
-
 $title = "Créer un contact";
 include('./partials/header.php');
-
+session_start();
 ?>
 
 
@@ -19,6 +18,13 @@ include('./partials/header.php');
 
         <form action="admin/admin_ajout_contact.php" method="POST">
 
+            <?php if (isset($_SESSION['error'])) : ?>
+                <div class="bg-red-500 text-white text-center p-2 mb-6 rounded">
+                    <?php echo $_SESSION['error']; ?>
+                    <?php unset($_SESSION['error']); ?>
+                </div>
+            <?php endif; ?>
+
             <div class="grid gap-2 md:grid-cols-2">
                 <div class="mr-4 ml-4">
                     <label class="block text-gray-600 font-light text-sm mb-1" for="nom">Nom</label>
@@ -34,7 +40,7 @@ include('./partials/header.php');
             <div class="grid gap-2 md:grid-cols-2">
                 <div class=" ml-4 mr-4 mt-6">
                     <label class="block text-gray-600 font-light text-sm mb-1" for="email">E-mail</label>
-                    <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="email" id="email" name="email" placeholder="E-mail">
+                    <input class="shadow-lg border border-[#533daf] py-2 px-2 w-full rounded-md focus:shadow-lg" type="mail" id="email" name="email" placeholder="E-mail">
                 </div>
 
                 <div class="mr-4 ml-4 mt-6 mb-6">
