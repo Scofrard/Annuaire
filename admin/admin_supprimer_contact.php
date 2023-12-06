@@ -15,7 +15,7 @@ if (!isset($_SESSION['id_utilisateur'])) {
 
 if (isset($_GET['id'])) {
     $contactId = $_GET['id'];
-    $resultat = supprimerContact($contactId); //Voir la fonction dans admin_requete_sql.php
+    $resultat = supprimerContact($contactId);
 
     if ($resultat === true) {
         //Assurer la redirection vers la page d'accueil lorsque le contact est supprimé
