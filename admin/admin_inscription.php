@@ -30,6 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $hashed_password = md5($password); // Utiliser MD5 (bien que non recommandé pour la production)
 
         if (insererUtilisateur($nom, $prenom, $nom_utilisateur, $hashed_password)) {
+
             if (insererQuestionSecrete($nom_utilisateur, $question, $reponse)) {
                 header('Location: ../connexion.php');
                 exit;

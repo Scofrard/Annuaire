@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $utilisateur = rechercheUtilisateur($nom_utilisateur);
     $_SESSION["id_utilisateur"] = $utilisateur["id"];
+    $_SESSION["nom_utilisateur"] = $nom_utilisateur;
 
     if (!$utilisateur) {
         $erreurs[] = "Le nom d'utilisateur n'existe pas";

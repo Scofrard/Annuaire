@@ -9,7 +9,7 @@ if (isset($_SESSION['id_utilisateur'])) {
     $userId = $_SESSION['id_utilisateur'];
     $contacts = recupererContactsUtilisateur($userId);
 } else {
-    // Si l'utilisateur n'est pas connecté, redirigez-le vers la page de connexion
+    // Si l'utilisateur n'est pas connecté, il est redirigé vers la page de connexion
     header('Location: connexion.php');
     exit;
 }
@@ -24,7 +24,7 @@ if (isset($_SESSION['id_utilisateur'])) {
         </form>
     </div>
 
-    <h1 class="text-center font-bold text-3xl">Bonjour<?php $_SESSION["id_utilisateur"] ?></h1>
+    <h1 class="text-center font-bold text-3xl">Bienvenue <?php echo htmlspecialchars($_SESSION["nom_utilisateur"]); ?> </h1>
 
     <div class="flex justify-between items-center mt-10 ml-5">
         <h2 class="text-center font-bold text-2xl">Contacts</h2>
@@ -37,7 +37,7 @@ if (isset($_SESSION['id_utilisateur'])) {
             <div class="bg-white p-5 shadow-xl rounded mb-5">
                 <div class="flex justify-between mt-4">
                     <div>
-                        <h3 class="font-bold text-lg"><?= htmlspecialchars($contact['nom']) . " " . htmlspecialchars($contact['prenom']) ?></h3>
+                        <h3 class="font-bold text-lg"><?php echo htmlspecialchars($contact['nom']) . " " . htmlspecialchars($contact['prenom']) ?></h3>
                     </div>
                     <div>
                         <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-2 mr-2 rounded-full">
@@ -52,9 +52,9 @@ if (isset($_SESSION['id_utilisateur'])) {
                         </button>
                     </div>
                 </div>
-                <p>Téléphone : <?= htmlspecialchars($contact['telephone']) ?></p>
-                <p>E-mail : <?= htmlspecialchars($contact['email']) ?></p>
-                <p>Adresse : <?= htmlspecialchars($contact['adresse']) ?></p>
+                <p>Téléphone : <?php echo htmlspecialchars($contact['telephone']) ?></p>
+                <p>E-mail : <?php echo htmlspecialchars($contact['email']) ?></p>
+                <p>Adresse : <?php echo htmlspecialchars($contact['adresse']) ?></p>
             </div>
         <?php endforeach; ?>
     </div>
