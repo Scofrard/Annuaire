@@ -2,7 +2,7 @@
 
 $title = "Page Mot de passe oublié";
 include('./partials/header.php');
-
+session_start();
 ?>
 
 
@@ -16,8 +16,18 @@ include('./partials/header.php');
 
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-lg xl:max-w-2xl">
 
+        <?php if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) : ?>
+            <div class="bg-red-500 text-white text-center p-2 mb-6 rounded">
+                <?php foreach ($_SESSION['errors'] as $erreur) : ?>
+                    <p><?php echo $erreur; ?></p>
+                <?php endforeach; ?>
+            </div>
+            <?php unset($_SESSION['errors']); ?>
+        <?php endif; ?>
 
-        <form action="admin/admin_mdp.php" method="POST">
+
+
+        <form action="admin/admin_modifier_mdp.php" method="POST">
 
             <div class="ml-4 mr-4 mt-6 mb-6">
                 <label class="block text-gray-600 font-light text-sm mb-1" for="nom_utilisateur">Nom d'utilisateur</label>
@@ -54,7 +64,7 @@ include('./partials/header.php');
 
 
             <div class="m-4 mt-10 text-center">
-                <button type="submit" value="bConfirmer" class="bg-gradient-to-b from-[#533daf] from-30% to-[#2A1F58] to-90% text-white text-lg font-bold px-8 py-2 rounded-xl hover:bg-orange-600">Confirmer</button>
+                <button type="submit" name="bConfirmer" class="bg-gradient-to-b from-[#533daf] from-30% to-[#2A1F58] to-90% text-white text-lg font-bold px-8 py-2 rounded-xl hover:bg-orange-600">Confirmer</button>
             </div>
 
         </form>

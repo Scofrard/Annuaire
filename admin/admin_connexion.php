@@ -8,20 +8,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $erreurs = [];
 
     $utilisateur = rechercheUtilisateur($nom_utilisateur);
-    $_SESSION["id_utilisateur"] = $utilisateur["id"];
-    $_SESSION["nom_utilisateur"] = $nom_utilisateur;
 
-    if (!$utilisateur) {
+    if ($utilisateur) {
+        // Vérifiez si le mot de passe saisi, une fois haché, correspond au hachage MD5 stocké
+        if (md5($password) === $utilisateur['mot_de_passe']) {
+            // Le mot de passe est correct
+            $_SESSION["id_utilisateur"] = $utilisateur["id"];
+            $_SESSION["nom_utilisateur"] = $nom_utilisateur;
+
+            // Connexion réussie, rediriger l'utilisateur
+            header('Location: ../accueil.php');
+            exit;
+        } else {
+            // Le mot de passe est incorrect
+            $erreurs[] = "Mot de passe incorrect";
+        }
+    } else {
+        // Le nom d'utilisateur n'existe pas
         $erreurs[] = "Le nom d'utilisateur n'existe pas";
-    } elseif (md5($password) !== $utilisateur['mot_de_passe']) {
-        $erreurs[] = "Mot de passe incorrect";
     }
 
-    if (empty($erreurs)) {
-        // Connexion réussie, rediriger l'utilisateur
-        header('Location: ../accueil.php');
-        exit;
-    } else {
+    if (!empty($erreurs)) {
         $_SESSION['error'] = implode('<br>', $erreurs);
         header('Location: ../connexion.php');
         exit;

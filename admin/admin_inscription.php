@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Si aucune erreur n'a été détectée, procéder à l'inscription
     if (empty($erreurs)) {
-        $hashed_password = md5($password); // Utiliser MD5 (bien que non recommandé pour la production)
+        $hashed_password = md5($password);
 
         if (insererUtilisateur($nom, $prenom, $nom_utilisateur, $hashed_password)) {
 

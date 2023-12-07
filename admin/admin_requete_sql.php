@@ -160,3 +160,59 @@ function supprimerContact($contactId)
     }
 }
 ?>
+
+<!-- MODIFIER LE MOT DE PASSE -->
+<!-- MODIFIER LE MOT DE PASSE -->
+<!-- MODIFIER LE MOT DE PASSE -->
+
+<?php
+
+function verifierQuestionSecrete($nomUtilisateur, $question, $reponse)
+{
+    global $bdd;
+    $sql = "SELECT reponse FROM question_secrete 
+            INNER JOIN utilisateur ON utilisateur.id = question_secrete.utilisateur_id 
+            WHERE utilisateur.nom_utilisateur = :nomUtilisateur 
+            AND question_secrete = :question";
+
+    try {
+        $stmt = $bdd->prepare($sql);
+        $stmt->bindParam(':nomUtilisateur', $nomUtilisateur, PDO::PARAM_STR);
+        $stmt->bindParam(':question', $question, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $resultat = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($resultat && $resultat['reponse'] === $reponse) {
+            return true;
+        }
+        return false;
+    } catch (PDOException $e) {
+        // Gérer l'erreur
+        return false;
+    }
+}
+
+
+
+function modifierMotDePasse($nomUtilisateur, $nouveauMdp)
+{
+    global $bdd;
+    $sql = "UPDATE utilisateur SET mot_de_passe = :hashed_password WHERE nom_utilisateur = :nomUtilisateur";
+    $hashed_password = md5($nouveauMdp);
+
+    try {
+        $stmt = $bdd->prepare($sql);
+        $stmt->bindParam(':hashed_password', $hashed_password, PDO::PARAM_STR);
+        $stmt->bindParam(':nomUtilisateur', $nomUtilisateur, PDO::PARAM_STR);
+        $stmt->execute();
+
+        if ($stmt->rowCount() > 0) {
+            return true; // Le mot de passe a été mis à jour.
+        } else {
+            return "Aucune mise à jour effectuée."; // Aucune ligne n'a été modifiée.
+        }
+    } catch (PDOException $e) {
+        return $e->getMessage(); // Retourne le message d'erreur en cas d'échec.
+    }
+}
