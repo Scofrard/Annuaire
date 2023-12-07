@@ -15,6 +15,14 @@ session_start();
 
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-lg xl:max-w-2xl">
 
+        <div class="border border-[#533daf] rounded p-5 mb-4">
+            <form action="upload_contacts.php" method="post" enctype="multipart/form-data">
+                <div class="flex flex justify-between items-center">
+                    <input type="file" name="csv_upload" id="csv_upload">
+                    <button class="bg-gradient-to-b from-[#533daf] from-30% to-[#2A1F58] to-90% text-white text-lg font-bold px-8 py-2 rounded-xl hover:bg-orange-600" type="submit" name="bImporter">Importer</button>
+                </div>
+            </form>
+        </div>
 
         <form action="admin/admin_ajout_contact.php" method="POST">
 
